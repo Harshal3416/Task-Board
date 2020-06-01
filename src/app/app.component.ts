@@ -44,10 +44,10 @@ export class AppComponent implements OnInit {
   }
 
   addtask() {
-    this.newTask.date = new Date();
     this.todo.push(this.newTask);
     this.newTask = { name: null, desc: null, date: null };
     localStorage.setItem('todo', JSON.stringify(this.todo));
+    this.newTask.date = new Date();
   }
 
   drop(event: CdkDragDrop<any>) {
@@ -69,6 +69,39 @@ export class AppComponent implements OnInit {
     localStorage.setItem('todo', JSON.stringify(this.todo));
     localStorage.setItem('doing', JSON.stringify(this.doing));
     localStorage.setItem('done', JSON.stringify(this.done));
+    localStorage.setItem('rejected', JSON.stringify(this.rejected));
+  }
+
+  deletetodo(date) {
+    for (let i = 0; i < this.todo.length; i++) {
+      if (this.todo[i].date === date) {
+        this.todo.pop();
+      }
+    }
+    localStorage.setItem('todo', JSON.stringify(this.todo));
+  }
+  deletedoing(date) {
+    for (let i = 0; i < this.doing.length; i++) {
+      if (this.doing[i].date === date) {
+        this.doing.pop();
+      }
+    }
+    localStorage.setItem('doing', JSON.stringify(this.doing));
+  }
+  deletedone(date) {
+    for (let i = 0; i < this.done.length; i++) {
+      if (this.done[i].date === date) {
+        this.done.pop();
+      }
+    }
+    localStorage.setItem('done', JSON.stringify(this.done));
+  }
+  deleterejected(date) {
+    for (let i = 0; i < this.rejected.length; i++) {
+      if (this.rejected[i].date === date) {
+        this.rejected.pop();
+      }
+    }
     localStorage.setItem('rejected', JSON.stringify(this.rejected));
   }
 }

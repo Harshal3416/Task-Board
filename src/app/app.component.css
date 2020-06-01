@@ -23,7 +23,7 @@ mat-card {
 }
 
 img {
-  height: 25px;
+  height: 23px;
   float: right;
 }
 
@@ -88,6 +88,12 @@ h3 {
 
 p {
   font-weight: 600;
+  margin: 0;
+}
+
+.cal {
+  color: lightgrey;
+  font-size: smaller;
 }
 
 .nulllist {
