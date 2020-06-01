@@ -100,11 +100,14 @@
 
         <mat-card cdkDrag *ngFor="let item of todo">
           <div>
-            <img
+            <!-- <img
               src="../assets/delete.png"
               alt=""
               (click)="deletetodo(item.date)"
-            />
+            /> -->
+            <div class="delete" (click)="deletetodo(item.date)">
+              Delete
+            </div>
             <mat-card-title
               ><p>Task Name:</p>
               {{ item?.name }}</mat-card-title
@@ -115,7 +118,7 @@
             >
           </div>
           <div class="cal">
-            <img src="../assets/calender.png" alt="" />
+            Created Date:
             {{ item?.date }}
           </div>
         </mat-card>
@@ -142,11 +145,9 @@
 
         <mat-card cdkDrag *ngFor="let item of doing">
           <div>
-            <img
-              src="../assets/delete.png"
-              alt=""
-              (click)="deletedoing(item.date)"
-            />
+            <div class="delete" (click)="deletedoing(item.date)">
+              Delete
+            </div>
             <mat-card-title
               ><p>Task Name:</p>
               {{ item.name }}</mat-card-title
@@ -157,7 +158,7 @@
             >
           </div>
           <div class="cal">
-            <img src="../assets/calender.png" alt="" />
+            Created Date:
             {{ item?.date }}
           </div>
         </mat-card>
@@ -182,11 +183,9 @@
         </div>
         <mat-card cdkDrag *ngFor="let item of done">
           <div>
-            <img
-              src="../assets/delete.png"
-              alt=""
-              (click)="deletedone(item.date)"
-            />
+            <div class="delete" (click)="deletedone(item.date)">
+              Delete
+            </div>
             <mat-card-title
               ><p>Task Name:</p>
               {{ item.name }}</mat-card-title
@@ -197,7 +196,7 @@
             >
           </div>
           <div class="cal">
-            <img src="../assets/calender.png" alt="" />
+            Created Date:
             {{ item?.date }}
           </div>
         </mat-card>
@@ -224,11 +223,9 @@
 
         <mat-card cdkDrag *ngFor="let item of rejected">
           <div>
-            <img
-              src="../assets/delete.png"
-              alt=""
-              (click)="deleterejected(item.date)"
-            />
+            <div class="delete" (click)="deleterejected(item.date)">
+              Delete
+            </div>
             <mat-card-title
               ><p>Task Name:</p>
               {{ item.name }}</mat-card-title
@@ -239,7 +236,7 @@
             >
           </div>
           <div class="cal">
-            <img src="../assets/calender.png" alt="" />
+            Created Date:
             {{ item?.date }}
           </div>
         </mat-card>

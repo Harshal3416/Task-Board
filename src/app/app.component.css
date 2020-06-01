@@ -82,6 +82,14 @@ img {
   margin: 2px;
 }
 
+.delete {
+  color: red;
+  float: right;
+  border: 1px solid red;
+  border-radius: 3px;
+  padding: 3px;
+  font-size: smaller;
+}
 .title {
   color: white;
   font-size: x-large;
