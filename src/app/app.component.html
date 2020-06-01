@@ -94,7 +94,7 @@
         (cdkDropListDropped)="drop($event)"
       >
         <div class="headcard">
-          <h3>ToDo</h3>
+          <div class="title">ToDo</div>
           <div class="count">{{ todo.length }}</div>
         </div>
 
@@ -136,7 +136,7 @@
         (cdkDropListDropped)="drop($event)"
       >
         <div class="headcard">
-          <h3>Doing</h3>
+          <div class="title">Doing</div>
           <div class="count">{{ doing.length }}</div>
         </div>
 
@@ -177,7 +177,7 @@
         (cdkDropListDropped)="drop($event)"
       >
         <div class="headcard">
-          <h3>Done</h3>
+          <div class="title">Done</div>
           <div class="count">{{ done.length }}</div>
         </div>
         <mat-card cdkDrag *ngFor="let item of done">
@@ -217,7 +217,8 @@
         (cdkDropListDropped)="drop($event)"
       >
         <div class="headcard">
-          <h3>Rejected</h3>
+          <div class="title">Rejected</div>
+
           <div class="count">{{ rejected.length }}</div>
         </div>
 
