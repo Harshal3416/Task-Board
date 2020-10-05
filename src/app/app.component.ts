@@ -18,8 +18,6 @@ export class AppComponent implements OnInit {
 
   constructor(public dialog: MatDialog) {}
 
-  // newTask = { name: '', desc: '', date: new Date() };
-
   todo = [];
   doing = [];
   done = [];
@@ -30,31 +28,33 @@ export class AppComponent implements OnInit {
     this.newTaskForm = new FormGroup({
       'name' : new FormControl(null),
       'desc' : new FormControl(null),
-      'date' : new FormControl(new Date())
+      'date' : new FormControl()
     })
 
     let localtodo = localStorage.getItem('todo');
-    if (localtodo !== null) {
+    if (localtodo) {
       this.todo = JSON.parse(localtodo);
     }
 
     let localdoing = localStorage.getItem('doing');
-    if (localdoing !== null) {
+    if (localdoing) {
       this.doing = JSON.parse(localdoing);
     }
 
     let localdone = localStorage.getItem('done');
-    if (localdone !== null) {
+    if (localdone) {
       this.done = JSON.parse(localdone);
     }
 
     let localrejected = localStorage.getItem('rejected');
-    if (localrejected !== null) {
+    if (localrejected) {
       this.rejected = JSON.parse(localrejected);
     }
   }
 
-  addTask() {   
+  addTask() {  
+    this.newTaskForm.value.date = new Date()
+     
     this.todo.push(this.newTaskForm.value);
     
     this.newTaskForm.reset()
@@ -85,35 +85,22 @@ export class AppComponent implements OnInit {
   }
 
   deletetodo(date) {
-    for (let i = 0; i < this.todo.length; i++) {
-      if (this.todo[i].date === date) {
-        this.todo.pop();
-      }
-    }
+    this.todo = this.todo.filter((item) => item.date !== date)
     localStorage.setItem('todo', JSON.stringify(this.todo));
   }
+
   deletedoing(date) {
-    for (let i = 0; i < this.doing.length; i++) {
-      if (this.doing[i].date === date) {
-        this.doing.pop();
-      }
-    }
+    this.doing = this.doing.filter((item) => item.date !== date)
     localStorage.setItem('doing', JSON.stringify(this.doing));
   }
+
   deletedone(date) {
-    for (let i = 0; i < this.done.length; i++) {
-      if (this.done[i].date === date) {
-        this.done.pop();
-      }
-    }
+    this.done = this.done.filter((item) => item.date !== date)
     localStorage.setItem('done', JSON.stringify(this.done));
   }
+
   deleterejected(date) {
-    for (let i = 0; i < this.rejected.length; i++) {
-      if (this.rejected[i].date === date) {
-        this.rejected.pop();
-      }
-    }
+    this.rejected = this.rejected.filter((item) => item.date !== date)
     localStorage.setItem('rejected', JSON.stringify(this.rejected));
   }
 }

@@ -24,7 +24,12 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" [disabled]="!newTaskForm.valid" class="btn btn-info" (click)="addTask()" data-dismiss="modal">Save changes</button>
+        <button type="button" 
+        data-dismiss="modal"
+        [disabled]="!newTaskForm.valid" 
+        class="btn btn-info" 
+        (click)="addTask()" 
+        >Save changes</button>
       </div>
     </div>
   </div>
@@ -41,29 +46,29 @@
         [cdkDropListConnectedTo]="[rejectedlist, doinglist, donelist, todolist]"
         (cdkDropListDropped)="drop($event)"
       >
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-light bg-light border-bottom">
           <div>ToDo</div>
           <div>{{ todo.length }}</div>
         </nav>
 
         <mat-card cdkDrag *ngFor="let item of todo">
           <div>
-            <div class="delete" (click)="deletetodo(item.date)">
+            <div class="delete p-1 float-right" (click)="deletetodo(item.date)">
               <span><i class="fa fa-trash"></i></span>
             </div>
 
             <mat-card-title
-              ><p>Task Name:</p>
+              ><p class="text-primary">Task Name:</p>
               {{ item?.name }}</mat-card-title
-            >
+            ><hr>
             <mat-card-subtitle
-              ><p>Task Description:</p>
+              ><p class="text-primary">Task Description:</p>
               {{ item?.desc }}</mat-card-subtitle
             >
-          </div>
-          <div class="cal">
+          </div><hr>
+          <div class="text-muted display-5 font-weight-light">
             Created Date:
-            {{ item?.date }}
+            {{ item?.date | date:"medium":"medium" }}
           </div>
         </mat-card>
 
@@ -82,28 +87,28 @@
         [cdkDropListConnectedTo]="[rejectedlist, doinglist, donelist, todolist]"
         (cdkDropListDropped)="drop($event)"
       >
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-light bg-light border-bottom">
           <div>Doing</div>
           <div>{{ doing.length }}</div>
         </nav>
 
         <mat-card cdkDrag *ngFor="let item of doing">
           <div>
-            <div class="delete" (click)="deletedoing(item.date)">
+            <div class="delete p-1 float-right" (click)="deletedoing(item.date)">
               <span><i class="fa fa-trash"></i></span>
             </div>
             <mat-card-title
-              ><p>Task Name:</p>
+              ><p class="text-primary">Task Name:</p>
               {{ item.name }}</mat-card-title
-            >
+            ><hr>
             <mat-card-subtitle
-              ><p>Task Description:</p>
+              ><p class="text-primary">Task Description:</p>
               {{ item.desc }}</mat-card-subtitle
             >
-          </div>
-          <div class="cal">
+          </div><hr>
+          <div class="text-muted display-5 font-weight-light">
             Created Date:
-            {{ item?.date }}
+            {{ item?.date | date:"medium" }}
           </div>
         </mat-card>
         <div class="alert alert-info m-3" *ngIf="doing.length === 0">
@@ -121,28 +126,28 @@
         [cdkDropListConnectedTo]="[rejectedlist, doinglist, donelist, todolist]"
         (cdkDropListDropped)="drop($event)"
       >
-      <nav class="navbar navbar-light bg-light">
+      <nav class="navbar navbar-light bg-light border-bottom">
         <div>Done</div>
         <div>{{ done.length }}</div>
       </nav> 
 
         <mat-card cdkDrag *ngFor="let item of done">
           <div>
-            <div class="delete" (click)="deletedone(item.date)">
+            <div class="delete p-1 float-right" (click)="deletedone(item.date)">
               <span><i class="fa fa-trash"></i></span>
             </div>
             <mat-card-title
-              ><p>Task Name:</p>
+              ><p class="text-primary">Task Name:</p>
               {{ item.name }}</mat-card-title
-            >
+            ><hr>
             <mat-card-subtitle
-              ><p>Task Description:</p>
+              ><p class="text-primary">Task Description:</p>
               {{ item.desc }}</mat-card-subtitle
             >
-          </div>
-          <div class="cal">
+          </div><hr>
+          <div class="text-muted display-5 font-weight-light">
             Created Date:
-            {{ item?.date }}
+            {{ item?.date | date:"medium"}}
           </div>
         </mat-card>
         <div class="alert alert-info m-3" *ngIf="done.length === 0">
@@ -161,28 +166,28 @@
         (cdkDropListDropped)="drop($event)"
       >
 
-      <nav class="navbar navbar-light bg-light">
+      <nav class="navbar navbar-light bg-light border-bottom">
         <div>Rejected</div>
         <div>{{ rejected.length }}</div>
       </nav> 
 
         <mat-card cdkDrag *ngFor="let item of rejected">
           <div>
-            <div class="delete" (click)="deleterejected(item.date)">
+            <div class="delete p-1 float-right" (click)="deleterejected(item.date)">
               <span><i class="fa fa-trash"></i></span>
             </div>
             <mat-card-title
-              ><p>Task Name:</p>
+              ><p class="text-primary">Task Name:</p>
               {{ item.name }}</mat-card-title
-            >
+            ><hr>
             <mat-card-subtitle
-              ><p>Task Description:</p>
+              ><p class="text-primary">Task Description:</p>
               {{ item.desc }}</mat-card-subtitle
             >
-          </div>
-          <div class="cal">
+          </div><hr>
+          <div class="text-muted display-5 font-weight-light">
             Created Date:
-            {{ item?.date }}
+            {{ item?.date | date:"medium"}}
           </div>
         </mat-card>
         <div class="alert alert-info m-3" *ngIf="rejected.length === 0">

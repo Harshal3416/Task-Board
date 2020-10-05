@@ -21,16 +21,8 @@ mat-card {
 
 .delete {
   color: red;
-  float: right;
-  border: 1px solid red;
-  border-radius: 3px;
-  padding: 3px;
-  font-size: smaller;
-}
-
-.cal {
-  color: lightgrey;
-  font-size: smaller;
+  border-radius: 7px;
+  border: 1px solid rgb(255, 207, 207);
 }
 
 .list-container {
