@@ -7,9 +7,9 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right,
     rgb(255, 111, 224),
     rgb(148, 169, 214)
-  );
+  ); */
 }

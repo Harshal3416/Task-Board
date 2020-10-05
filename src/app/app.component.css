@@ -1,40 +1,9 @@
-.navmain {
-  width: 97%;
-  margin-left: 1.5%;
-}
-
-.nav {
-  margin-top: 2%;
-  border-radius: 10px;
-  background-color: white;
-  color: black;
-}
-
-.navSpace {
-  flex: 1 1 auto;
-}
-
-.back {
-  background-color: teal;
-}
 
 mat-card {
   background-color: white;
-}
-
-img {
-  height: 23px;
-  float: right;
-}
-
-.taskHeader {
-  height: 35px;
-  background-color: blueviolet;
-  padding: 7px;
-  color: white;
-  font-weight: 400;
-  display: flex;
-  align-items: center;
+  margin: 1em;
+  cursor: pointer;
+  border: 2px solid lightgrey;
 }
 
 .cards {
@@ -43,43 +12,11 @@ img {
   margin-top: 5%;
 }
 
-.cardBody {
-  background-color: white;
-  width: 19%;
-  border-radius: 10px;
-  margin: 10px;
-}
-
-.cardBack {
-  background-color: rgb(216, 172, 216);
-  padding: 10px;
-}
-
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.headcard {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(176, 41, 189);
-  border-radius: 5px;
-}
-
-.count {
-  background-color: white;
-  color: darkviolet;
-  width: 25px;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin: 2px;
 }
 
 .delete {
@@ -90,29 +27,10 @@ img {
   padding: 3px;
   font-size: smaller;
 }
-.title {
-  color: white;
-  font-size: x-large;
-}
-
-h3 {
-  display: flex;
-  justify-content: center;
-  align-self: center;
-}
-
-p {
-  font-weight: 600;
-  margin: 0;
-}
 
 .cal {
   color: lightgrey;
   font-size: smaller;
-}
-
-.nulllist {
-  background-color: rgb(224, 222, 222);
 }
 
 .list-container {
@@ -128,39 +46,13 @@ p {
   margin: 0 25px 25px 0;
   display: inline-block;
   vertical-align: top;
-  background-color: RGBA(255, 255, 255, 0.05);
-}
-
-mat-card {
-  margin: 1em;
-  cursor: pointer;
 }
 
 .list {
-  border: white solid 1px;
-  border-radius: 5px;
-  /* background-color: violet; */
-  background-image: linear-gradient(
-    to right,
-    rgb(185, 195, 218),
-    rgb(190, 170, 209)
-  );
+  border: 1px solid lightblue;
 }
 
-/* .list-item {
-  margin: 10px;
-  padding: 20px 10px;
-  border-bottom: solid 1px #ccc;
-  color: rgba(0, 0, 0, 0.87);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  cursor: move;
-  background: white;
-  font-size: 14px;
-} */
+
 
 .cdk-drag-preview {
   box-sizing: border-box;

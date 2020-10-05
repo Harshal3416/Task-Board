@@ -5,6 +5,7 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -12,9 +13,12 @@ import {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+
+  newTaskForm: FormGroup;
+
   constructor(public dialog: MatDialog) {}
 
-  newTask = { name: '', desc: '', date: new Date() };
+  // newTask = { name: '', desc: '', date: new Date() };
 
   todo = [];
   doing = [];
@@ -22,6 +26,13 @@ export class AppComponent implements OnInit {
   rejected = [];
 
   ngOnInit() {
+
+    this.newTaskForm = new FormGroup({
+      'name' : new FormControl(null),
+      'desc' : new FormControl(null),
+      'date' : new FormControl(new Date())
+    })
+
     let localtodo = localStorage.getItem('todo');
     if (localtodo !== null) {
       this.todo = JSON.parse(localtodo);
@@ -43,11 +54,12 @@ export class AppComponent implements OnInit {
     }
   }
 
-  addtask() {
-    this.todo.push(this.newTask);
-    this.newTask = { name: null, desc: null, date: null };
+  addTask() {   
+    this.todo.push(this.newTaskForm.value);
+    
+    this.newTaskForm.reset()
     localStorage.setItem('todo', JSON.stringify(this.todo));
-    this.newTask.date = new Date();
+    this.newTaskForm.value.date = new Date();
   }
 
   drop(event: CdkDragDrop<any>) {
