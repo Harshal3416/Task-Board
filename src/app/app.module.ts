@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { StoreModule } from '@ngrx/store';
+import { TodoReducer } from './reducer/todo.reducer';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, TasksComponent],
@@ -25,7 +27,8 @@ import { TasksComponent } from './tasks/tasks.component';
     MatDialogModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({todos: TodoReducer})
   ],
   providers: [],
   bootstrap: [AppComponent],
